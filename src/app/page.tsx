@@ -1,20 +1,20 @@
 "use client";
 
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import TranscriptionDemo from "@/components/TranscriptionDemo";
+import AppStoreBadge from "@/components/AppStoreBadge";
+import DownloadButton from "@/components/DownloadButton";
+import FAQSection from "@/components/FAQSection";
 import FeatureCard from "@/components/FeatureCard";
+import PricingSection from "@/components/PricingSection";
+import TranscriptionDemo from "@/components/TranscriptionDemo";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
-  Mic,
-  Zap,
+  Download,
   Keyboard,
+  Mic,
   Palette,
   Settings,
-  Download,
-  ArrowRight,
-  Play,
-  Star,
+  Zap
 } from "lucide-react";
 
 export default function Page() {
@@ -22,7 +22,7 @@ export default function Page() {
     <div className="bg-white dark:bg-black min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-black">
-        <div className="container mx-auto px-6 py-24 lg:py-40">
+        <div className="container mx-auto px-6 pt-32 pb-24 lg:pt-48 lg:pb-40">
           <div className="text-center max-w-5xl mx-auto">
             <Badge className="mb-8 bg-gray-100 text-gray-600 dark:bg-gray-900 dark:text-gray-400 border-0 rounded-full px-4 py-2 text-sm font-medium">
               Now Available for macOS
@@ -42,12 +42,7 @@ export default function Page() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-              <Button
-                size="lg"
-                className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 px-8 py-4 rounded-full font-medium text-base transition-all duration-200 border-0"
-              >
-                Download for Mac
-              </Button>
+              <DownloadButton className="px-8 py-4 text-base" />
               <Button
                 variant="ghost"
                 size="lg"
@@ -60,9 +55,14 @@ export default function Page() {
             <div className="flex items-center justify-center gap-8 text-sm text-gray-500 dark:text-gray-500">
               <div>macOS 12.0+</div>
               <div>•</div>
-              <div>Free Trial Available</div>
+              <div>100% Free</div>
+              <div>•</div>
+              <div>BYO API Key</div>
             </div>
           </div>
+
+          {/* App Preview */}
+          
         </div>
       </section>
 
@@ -154,6 +154,12 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <PricingSection />
+
+      {/* FAQ Section */}
+      <FAQSection />
+
       {/* CTA Section */}
       <section className="py-32 bg-gray-50 dark:bg-gray-950">
         <div className="container mx-auto px-6 text-center">
@@ -166,23 +172,24 @@ export default function Page() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button
-              size="lg"
-              className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 px-8 py-4 rounded-full font-medium text-base transition-all duration-200 border-0"
+            <DownloadButton className="px-8 py-4 text-base" />
+            <a
+              href="https://console.deepgram.com/signup"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Download Free Trial
-            </Button>
-            <Button
-              variant="ghost"
-              size="lg"
-              className="px-8 py-4 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-900 rounded-full font-medium text-base transition-all duration-200"
-            >
-              Learn More
-            </Button>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="px-8 py-4 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-900 rounded-full font-medium text-base transition-all duration-200"
+              >
+                Get API Key
+              </Button>
+            </a>
           </div>
 
           <p className="text-base text-gray-500 dark:text-gray-500 font-light">
-            No credit card required • 14-day free trial • Cancel anytime
+            100% Free • No subscriptions • Just bring your Deepgram API key
           </p>
         </div>
       </section>
@@ -195,9 +202,10 @@ export default function Page() {
               <h3 className="text-xl font-light mb-2 text-black dark:text-white">
                 SupaWhisper
               </h3>
-              <p className="text-base text-gray-500 dark:text-gray-500 font-light">
+              <p className="text-base text-gray-500 dark:text-gray-500 font-light mb-4">
                 Instant audio transcription for Mac
               </p>
+              <AppStoreBadge />
             </div>
 
             <div className="flex flex-col sm:flex-row gap-8 text-base text-gray-500 dark:text-gray-500">
@@ -224,7 +232,7 @@ export default function Page() {
 
           <div className="border-t border-gray-200 dark:border-gray-800 pt-8 text-center">
             <p className="text-base text-gray-500 dark:text-gray-500 font-light">
-              &copy; 2024 SupaWhisper. All rights reserved.
+              &copy; 2025 SupaWhisper. All rights reserved.
             </p>
           </div>
         </div>
